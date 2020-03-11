@@ -1,0 +1,91 @@
+00:11:24	Georgina Hemmings:	You should be able to see me, hear me and see the slide titled Module 6. Let me know if this is not the case for you
+00:16:04	EJing:	Hi Georgina, 2B past papers have a lost of questions with Australian domain knowledge, especially for Capital. should we skip this kind of questions?
+00:17:25	EJing:	that is a good way. thanks
+00:18:23	EJing:	just started yesterday
+00:18:54	Recoba:	Is it better to focus on 2B Australian exams or the UK ST2?
+00:19:29	EJing:	looks like UK ST2 have a lot of Qs for pricing, not many for Val
+00:19:54	EJing:	yes
+00:20:08	Recoba:	Is there a link for it?
+00:20:11	priya:	not that I am aware of
+00:20:25	Harrison:	I am not aware of such a spreadsheet but it sounds very useful!
+00:20:34	EJing:	I got it from pricing course in last term
+00:20:37	priya:	how do we gain access to it?
+00:20:40	Recoba:	me too. wasn't aware of it
+00:20:41	Bob:	I second that Harrison!
+00:20:46	EJing:	not sure if it is post here 
+00:20:52	Harrison:	Thanks Bob
+00:21:52	EJing:	yes
+00:30:27	Recoba:	Decrease in policies. API and sum assured could increase/decrease due to CPI
+00:30:47	Recoba:	Sorry yes Annual prem
+00:35:38	EJing:	yes, I did
+00:35:40	Recoba:	Yes
+00:35:40	zoom:	yes
+00:35:41	Bear:	yep
+00:36:12	Bob:	10
+00:36:17	Recoba:	10
+00:36:21	zoom:	13
+00:36:41	Bear:	go through the requirement
+00:38:27	zoom:	Georgina i thought there is a premium with $12.80
+00:45:29	Bear:	Question: if someone already tech-reviewed the data, what else do we need to do to peer review? do we need to go through the same steps?
+00:46:53	Bear:	thanks!
+00:48:08	zoom:	there are 2 policies (A1538 and B1573) with Age at policy inception > ge birthday at last policy anniversary.
+00:49:05	Recoba:	So in an exam if you get this type of question, are marks allocated on each error found or do you have to find all the errors to be eligible?
+00:52:39	Recoba:	Liability duration?
+00:52:50	zoom:	MClauy duration?
+00:59:10	Bear:	How do we consider capital charge on ALM?
+01:01:56	Bear:	Then how do we determine the optimal asset strategy that maximizes the return (after allowing for capital charge, liquidity requirement / liability duration, potential return from mismatch strategy)
+01:03:53	Bear:	thanks
+01:03:57	Amy:	what about the assets that’s not backing liabilities?
+01:07:13	EJing:	liability 
+01:07:22	EJing:	cash flow timing and amount
+01:07:33	kat:	and currency
+01:07:36	Bear:	certainty
+01:10:09	dbl:	incidence rates
+01:10:31	EJing:	product feature
+01:10:34	Recoba:	discount rates,
+01:16:42	Bear:	DLR
+01:16:47	priya:	ALR
+01:16:48	Bear:	IBNR
+01:17:32	kat:	shorter term than dlr?
+01:17:43	EJing:	ALR cash flow timing unknown
+01:17:57	zoom:	there is a waiting period with IP
+01:19:12	Bear:	payment amount is certain but termination experience is not
+01:19:50	EJing:	liquidity
+01:19:51	Bear:	rehabilitation, death
+01:23:56	zoom:	inflation-linked bonds
+01:23:56	kat:	equities .? small portion ?
+01:24:10	Bear:	CPI-indexed bond
+01:25:13	zoom:	just curious, how does the capital charges works for derivatives?
+01:25:17	zoom:	given u say swap
+01:25:47	Maximus:	why can't you invest for ALR? Why do you have to hold cash then invest after they become disabled?
+01:26:47	EJing:	it needs to be liquid as we do not know when do we need to start payment
+01:26:51	Bear:	because too much uncertainty in the first payment?
+01:26:53	zoom:	each company has different SAA, but a bit of cash and STM is usually the case
+01:26:56	priya:	does it depend on which criteria is more important? i.e. is timing more important relative to duration?
+01:29:11	kat:	fixed
+01:29:13	Bear:	payment amount is certain, timing is not
+01:29:14	EJing:	big amount, one payment
+01:30:26	Recoba:	Amount could be uncertain depending on product feature (i.e. if there is a partial payment feature for Trauma or TPD)
+01:30:46	Bear:	if we have confidence in our CDF assumption, can we invest in riskier assets? for IBNR
+01:31:15	kat:	what about tpd for it can be notified much later . liability duration is long term so match with lt assets ?
+01:32:25	EJing:	so longer term investment for TPD than YRT?
+01:32:43	EJing:	IBNR
+01:37:14	Bear:	the question mentions they are closed book; does it have any implications on ALM?
+01:39:02	zoom:	management expenses might be sticky?
+01:39:36	Bear:	ownership of the surplus?
+01:39:45	priya:	closed book may mean you would need to more matched to liabilities?
+01:39:48	zoom:	duration is getting shorter too, as policyholders average age getting older
+01:40:27	Cameron:	if its for par, would it mean more of the final benefit is already guaranteed so would need to be more conservative?
+01:43:08	EJing:	termination bonus is not guaranteed
+01:44:17	Harrison:	hi Georgina, for the exam summary spreadsheet you said you would link - would you be able to quickly go through some of the past exams and indicate the relevance of each question to this unit?
+01:45:00	Harrison:	for the unit?
+01:45:18	Harrison:	Sorry, more in terms of - q1 would probably not be examinable etc
+01:46:47	EJing:	yes
+01:46:48	priya:	yep
+01:47:25	priya:	profit
+01:50:01	Bob:	no
+01:50:10	Harrison:	thankyou
+01:51:03	priya:	thanks
+01:51:13	EJing:	thank you very much Georgina. Have a good night!
+01:51:15	Amy:	thank you
+01:51:17	zoom:	Thank you 

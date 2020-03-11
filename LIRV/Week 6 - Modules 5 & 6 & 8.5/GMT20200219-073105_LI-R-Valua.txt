@@ -1,0 +1,84 @@
+00:21:21	student:	all good
+00:25:05	A:	I’m currently working in HK as well, mics not working sorry
+00:25:12	student:	sorry, my mic wasn't on mute
+00:38:05	dbl:	go down by 10
+00:38:08	iris:	Asset -10
+00:38:08	student:	decrease by 10
+00:38:24	dbl:	capital go down
+00:38:50	dbl:	ah yep
+00:38:58	dbl:	liabilities would reduce
+00:39:20	dbl:	EPV(outgo) - EPV(premium)
+00:39:37	dbl:	EPV(Outgo) goes down by 20
+00:39:43	dbl:	EPV(premium) goes down by 10
+00:39:45	student:	why?
+00:41:20	dbl:	we need to hold 25 in assets to match future obligations
+00:41:31	iris:	it’s loss making
+00:41:33	Cameron:	-25 is the PV of future profits
+00:41:34	dbl:	its loss making
+00:41:34	S:	loss making?
+00:42:53	student:	too conservative
+00:42:54	Cameron:	we add a profit margin to the policy liability
+00:42:59	I give up:	participating business?
+00:42:59	S:	its more conservative than pricing assump
+00:44:26	dbl:	profitable contract
+00:44:39	dbl:	epv of future profit
+00:46:15	Amy:	spread it
+00:46:15	S:	earn it across the life of the policy
+00:54:34	Harrison:	looks good
+00:57:38	student:	how checks look?
+00:58:11	student:	comments? 
+01:00:28	chung-yi:	Say in the assignment, you perform some checks but it does not check up correctly or as expected, will you lose mark on it?
+01:00:36	dbl:	Expected claims remains relatively level each year while expected premiums reduce each year with reducing in-force business volumes
+01:01:54	chung-yi:	cool, thanks
+01:05:47	dbl:	income - outgo - change in liab
+01:08:06	dbl:	all equal to 0
+01:09:17	dbl:	the higher discount rate reduces the pv of future profit
+01:09:26	dbl:	and the initial loss is relatively larger
+01:14:32	Amy:	delay profit
+01:14:56	I give up:	will irr get impacted?
+01:15:25	Amy:	why irr is here
+01:15:48	I give up:	its a profitability metrics
+01:16:00	dbl:	shouldn't
+01:16:04	dbl:	because profit is the same
+01:16:43	I give up:	thx
+01:19:40	Amy:	why negative reserve at start considered reasonable?
+01:20:31	Amy:	all good
+01:21:13	dbl:	its similar to mos
+01:22:53	Amy:	is smooth profit not a desirable feature?
+01:27:06	dbl:	active and disabled lives
+01:27:16	student:	on claim and inforce
+01:30:07	student:	use decrements 
+01:30:08	kat:	use expected termination rates
+01:32:02	dbl:	assumes that policies end after the claim
+01:35:43	student:	no
+01:36:36	Harrison:	on what basis do they create their case estimate?
+01:37:06	Amy:	not easy for long benefit period
+01:37:12	Harrison:	so less data driven?
+01:37:25	kat:	how do u use the estimate from case estimate ?
+01:37:47	kat:	isn’t that accounted for in annuity factor ?
+01:38:26	kat:	oh ok thank you
+01:38:41	kat:	got it
+01:38:41	Harrison:	sorry so for example if I have live A, then I take that to the assessor and they say they know of a person B and so we expect A to follow similar cashflow experience as B?
+01:39:26	Harrison:	ok thanks
+01:40:04	Harrison:	sorry 1 more question
+01:40:09	LL:	sorry can you please explain again that conservative basis delays benefits? because looking at the numbers it doesn’t seem to be the case..? or did I misunderstand anything here..?
+01:40:16	Harrison:	if you are signing off on the liability
+01:40:25	dbl:	conservative basis delays profits
+01:40:27	dbl:	not benefits
+01:40:45	LL:	yeah I mean profits sorry
+01:41:03	Harrison:	is that reasonable to justify your liability on what the case estimator said? what happens if that case estimator is not a good at his/her job?
+01:42:28	dbl:	could depend on how your portfolio's claims experience compared to the industry
+01:43:21	Harrison:	fair enough
+01:43:30	LL:	basis 2 is more conservative than basis 1, but the profits seem to be released earlier than basis 1?
+01:44:39	student:	the whole video will be recorded, right? 
+01:44:46	student:	it won't stop at 8?
+01:44:56	student:	cool
+01:45:01	LL:	oh right so it’s not purely based on time 0 liability
+01:45:05	dbl:	could be due to the choice in assumption change
+01:45:05	LL:	I think I get it thanks
+01:45:32	LL:	yeah make sense, thanks
+01:46:07	Amy:	thank you
+01:46:48	Harrison:	thanks!
+01:46:59	Emily Jing:	thank you. have a good evening!
+01:47:05	dbl:	thanks 
+01:47:09	LL:	thanks
