@@ -1,0 +1,85 @@
+00:14:23	mchen2:	powerpoint
+00:14:24	Cameron:	slides
+00:14:45	EJing:	yes
+00:15:56	Bob:	will the exam be postponed? SOA and CAS have both cancelled their exams
+00:17:54	Bear:	postpone 
+00:18:00	Cameron:	exam goes ahead as planned
+00:18:01	kitkat:	don't postpone
+00:18:04	jb:	online exam?
+00:18:05	mchen2:	what does  credit for next sem mean
+00:18:08	Recoba:	Don't postpone
+00:18:10	EJing:	postpone may be the best option
+00:18:15	amy:	I'd probably prefer to go ahead but with rooms where students can be an appropriate distance apart
+00:18:23	jb:	expand the venue
+00:18:40	Bear:	a few months etc.
+00:18:48	EJing:	until coronavirus is not big concern
+00:18:52	EJing:	just delay the exam
+00:19:08	cat:	I prefer to delay exam too :)
+00:19:13	EJing:	or another assignment to replace exam
+00:19:37	jb:	maybe postpone to May/June
+00:19:43	mchen2:	agree
+00:21:06	jb:	dont go out
+00:21:06	mchen2:	self isolation
+00:21:12	Bob:	work from home
+00:21:22	Geo:	Masks
+00:21:22	mchen2:	social distancing
+00:21:24	EJing:	try to go out less
+00:21:27	Bear:	stay healthy
+00:21:31	jb:	sanitising hands
+00:21:34	EJing:	do exercise
+00:22:35	EJing:	no
+00:22:41	kitkat:	business interruption cover
+00:22:42	mchen2:	go to the doctor
+00:22:45	Bear:	insurance
+00:22:49	jb:	have someone else buy groceries for you
+00:22:57	kitkat:	disability income- mental illnes
+00:23:05	SN:	deport
+00:23:36	jb:	reinsurance
+00:23:37	mchen2:	reinsurance
+00:23:48	Bear:	catastrophe bond
+00:23:58	SN:	outsourcing
+00:24:29	amy:	you almost incur additional risk from outsourcing
+00:25:04	kitkat:	recover from illness
+00:26:09	mchen2:	holistic approach?
+00:26:12	SN:	holistic
+00:26:12	jb:	you're looking at the whole enterprise
+00:26:27	SN:	look at all risks of company
+00:26:38	mchen2:	looking at both sides of risk
+00:26:39	SN:	have a whole structure
+00:27:00	SN:	three line of defence
+00:29:08	Bear:	what if target markets are different?
+00:34:02	Bear:	opportunity
+00:34:49	kitkat:	dpressing
+00:34:49	Bear:	when performance review is risk adjusted, it's normally downside risk?
+00:41:37	jb:	hail storm for GI?
+00:42:57	Geo:	sort of same idea... but chipped windscreen on car
+00:42:59	Bear:	operational
+00:43:09	Recoba:	Sick days?
+00:43:22	jb:	HIV in south africa?
+00:43:27	SN:	IT system breakdown
+00:46:23	jb:	4 good points
+00:46:24	mchen2:	at least 4 risks?
+00:50:25	EJing:	longevity risk
+00:50:31	Bear:	political
+00:50:32	EJing:	pricing risk
+00:50:33	Harrison:	if substandard lives were to buy it they would not receive good value for money
+00:50:47	mchen2:	execution risk - no experience
+00:50:51	Geo:	operational risks e.g. admin, IT; considering has no experience in market
+00:51:03	Bear:	investment risk if guarantee
+00:51:06	EJing:	the insured lives longer than expected, and the payments incurred are higher
+00:51:32	jb:	is there any underwriting for annuities?
+00:51:33	EJing:	new business volume risk, if low, fixed cost may not be covered
+00:51:44	EJing:	no underwriting for annuity
+00:51:46	Recoba:	no underwriting unless impaired
+00:51:58	jb:	ah ok
+00:52:18	Bear:	basis is mean of distribution, trend is about moving average
+00:52:20	jb:	trend is relating to future changes in mortality e.g. mortality improvements
+00:52:33	jb:	no internal data
+00:52:42	kitkat:	not representative of lives
+00:52:54	Bear:	standard table might not be representative of the insured risk we model
+00:53:00	Recoba:	Can't use the mortality rate of the country or for the insured
+00:54:37	Bear:	if long-term IP is bad product, then would lifetime annuity be bad product for similar reasons
+01:00:54	jb:	reputation risk
+01:19:18	SN:	thank you
+01:19:19	EJing:	thank you Georgina. Have a good night!
+01:19:22	Geo:	Thanks!!
