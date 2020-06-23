@@ -30,11 +30,18 @@ CreditYieldDict = {'AAA' : 'CR.USD.CORP.ALLSEC.AAA.ZERO.BASE',
                    'BB'  : 'CR.USD.CORP.ALLSEC.BB.ZERO.BASE',
                    'CCC' : 'CR.USD.CORP.ALLSEC.CCC.ZERO.BASE' }
 
+CreditYieldDict_GBP = {'AAA' : 'CR.GBP.CORP.ALLSEC.AAA.ZERO.BASE',
+                       'AA'  : 'CR.GBP.CORP.ALLSEC.AA.ZERO.BASE',
+                       'A'   : 'CR.GBP.CORP.ALLSEC.A.ZERO.BASE',
+                       'BBB' : 'CR.GBP.CORP.ALLSEC.BBB.ZERO.BASE',
+                       'BB'  : 'CR.GBP.CORP.ALLSEC.BB.ZERO.BASE',
+                       'CCC' : 'CR.GBP.CORP.ALLSEC.CCC.ZERO.BASE' }
+
 marketIndexDict = {'US_Equity' : "EQ.USD.IDX.SPX.SPOT.BASE"}
 
 PE_Return_Model = {'alpha' : 0.016, 'beta': 0.8 }
 
-BMA_ccy_map     = {'USD': 'BMA risk free', "GBP" : 'UK', 'USD_Spot': 'US'}
+BMA_ccy_map     = {'USD': 'BMA risk free', "GBP" : 'UK'}
 BMA_curve_dir   = 'L:\DSA Re\Workspace\Production\EBS Dashboard\Python_Code\BMA_Curves'
 
 BMA_curve_file  = {datetime.datetime(2018, 12, 28): 'BMA_Curves_20181228.xlsx',
@@ -44,7 +51,8 @@ BMA_curve_file  = {datetime.datetime(2018, 12, 28): 'BMA_Curves_20181228.xlsx',
                    datetime.datetime(2019, 6, 28) : 'BMA_Curves_20190628.xlsx',
                    datetime.datetime(2019, 6, 30) : 'BMA_Curves_20190630.xlsx',
                    datetime.datetime(2019, 9, 30) : 'BMA_Curves_20190930.xlsx',
-                   datetime.datetime(2019, 12, 31): 'BMA_Curves_20191231.xlsx'}
+                   datetime.datetime(2019, 12, 31): 'BMA_Curves_20191231.xlsx',
+                   datetime.datetime(2020, 3, 31) : 'BMA_Curves_20200331.xlsx'}
 
 BMA_ALM_BSCR_shock_file = 'ALM BSCR Shock.xlsx'
 
@@ -77,8 +85,11 @@ def createAkitZeroCurve(valDate, curveType = "Treasury", ccy= "USD", rating = "B
     elif curveType == "Swap":
         curveName = swapCurveDict.get(ccy)
 
-    elif curveType == "Credit":
+    elif curveType == "Credit" and ccy =="USD":
         curveName = CreditYieldDict.get(rating)
+    
+    elif curveType == "Credit" and ccy =="GBP":
+        curveName = CreditYieldDict_GBP.get(rating)
 
     # Get curve market data from TSR
     curveTerms = MKT.TSR.MarketData(curveName, valDate, "T")
@@ -146,14 +157,34 @@ def Set_Dashboard_MarketFactors(eval_dates, curveType, proxy_term = 7, rating = 
         curr_GBP         = get_GBP_rate(valDate, curvename = 'FX.USDGBP.SPOT.BASE')
         
         each_market_data = [valDate, proxy_term, ir_rate, credit_rate, credit_spread, curr_GBP, spx]
-        
-        
-        for key, value in KRD_Term.items():
-            each_market_data.append( irCurve.zeroRate(value) )
-        
+
         CreditCurve_A      = createAkitZeroCurve(valDate, "Credit", Currency, rating_A)
         credit_rate_A      = CreditCurve_A.zeroRate(proxy_term )
         credit_spread_A    = (credit_rate_A - ir_rate)*10000
+        CreditCurve_AA     = createAkitZeroCurve(valDate, "Credit", Currency, "AA")
+        credit_rate_AA     = CreditCurve_AA.zeroRate(proxy_term )
+        credit_spread_AA   = (credit_rate_AA - ir_rate)*10000
+        credit_spread_mix  = (0.4 * credit_spread_A + 0.6 * credit_spread_AA)/10000
+
+        ir_rate_20            = irCurve.zeroRate(20)            
+        CreditCurve_A_20      = createAkitZeroCurve(valDate, "Credit", Currency, rating_A)
+        credit_rate_A_20      = CreditCurve_A_20.zeroRate(20 )
+        credit_spread_A_20    = (credit_rate_A_20 - ir_rate_20)*10000
+        CreditCurve_AA_20     = createAkitZeroCurve(valDate, "Credit", Currency, "AA")
+        credit_rate_AA_20     = CreditCurve_AA_20.zeroRate(20 )
+        credit_spread_AA_20   = (credit_rate_AA_20 - ir_rate)*10000
+        credit_spread_mix_20  = (0.4 * credit_spread_A_20 + 0.6 * credit_spread_AA_20)/10000
+
+        if curveType == "Swap" and Currency == "GBP": #Market factor for ALBA,used for attribution       
+            for key, value in KRD_Term.items():
+                if value < 20:
+                    each_market_data.append( irCurve.zeroRate(value)+credit_spread_mix )
+                else:
+                    each_market_data.append( irCurve.zeroRate(value)+credit_spread_mix_20 )                    
+        else:
+            for key, value in KRD_Term.items():
+                each_market_data.append( irCurve.zeroRate(value) )
+        
         each_market_data.append(credit_rate_A)
         each_market_data.append(credit_spread_A)
         
@@ -166,7 +197,10 @@ def load_BMA_Std_Curves(valDate, ccy, revalDate, rollforward = "N", rollforward_
 
     curr_dir = os.getcwd()
     os.chdir(BMA_curve_dir)
-    fileName = BMA_curve_file[valDate]
+    if revalDate >= datetime.datetime(2020,3,31) and valDate == datetime.datetime(2019,12,31):
+        fileName = 'BMA_Curves_20191231_Q1_UK.xlsx' 
+    else:
+        fileName = BMA_curve_file[valDate]
     work_BMA_file = pd.ExcelFile(fileName)
     work_BMA_curves = pd.read_excel(work_BMA_file)
     work_ccy        = BMA_ccy_map[ccy]
@@ -189,12 +223,51 @@ def load_BMA_Std_Curves(valDate, ccy, revalDate, rollforward = "N", rollforward_
         curve_terms.append(each_term)
         curve_term_years.append(each_term_ary[0])
     
-    if valDate == revalDate:
+    if valDate == revalDate and revalDate == datetime.datetime(2020,3,31): #ALBA curve refreshed on 3/31
         calc_rates = work_rates 
 
     else:
-        irCurve_val   = createAkitZeroCurve(valDate, "Swap", ccy)
-        irCurve_reval = createAkitZeroCurve(revalDate, "Swap", ccy)
+        if valDate == datetime.datetime(2019,12,31) and revalDate > datetime.datetime(2020,3,31):
+            base_date = datetime.datetime(2020,3,31)
+        else:   
+            base_date = valDate
+#####   get credit yield curve and swap curve        
+        irCurve_val               = createAkitZeroCurve(base_date, "Swap", "GBP")
+        irCurve_reval             = createAkitZeroCurve(revalDate, "Swap", "GBP")
+        CreditCurve_AA_val        = createAkitZeroCurve(base_date, "Credit", "GBP", "AA")
+        CreditCurve_A_val         = createAkitZeroCurve(base_date, "Credit", "GBP", "A")
+        CreditCurve_AA_reval      = createAkitZeroCurve(revalDate, "Credit", "GBP", "AA")
+        CreditCurve_A_reval       = createAkitZeroCurve(revalDate, "Credit", "GBP", "A")
+
+#####   10 Year rate
+        ir_rate_GBP_val           = irCurve_val.zeroRate(10)            
+        credit_rate_AA_val        = CreditCurve_AA_val.zeroRate(10 )
+        credit_spread_AA_val      = (credit_rate_AA_val - ir_rate_GBP_val)
+        credit_rate_A_val         = CreditCurve_A_val.zeroRate(10)
+        credit_spread_A_val       = (credit_rate_A_val - ir_rate_GBP_val) 
+          
+        ir_rate_GBP_reval         = irCurve_reval.zeroRate(10)            
+        credit_rate_AA_reval      = CreditCurve_AA_reval.zeroRate(10 )
+        credit_spread_AA_reval    = (credit_rate_AA_reval - ir_rate_GBP_reval)
+        credit_rate_A_reval       = CreditCurve_A_reval.zeroRate(10)
+        credit_spread_A_reval     = (credit_rate_A_reval - ir_rate_GBP_reval)
+            
+        spread_change_10          = 0.4*(credit_spread_A_reval-credit_spread_A_val)+0.6*(credit_spread_AA_reval-credit_spread_AA_val)
+
+#####   20 Year rate
+        ir_rate_GBP_20_val        = irCurve_val.zeroRate(20)            
+        credit_rate_AA_20_val     = CreditCurve_AA_val.zeroRate(20 )
+        credit_spread_AA_20_val   = (credit_rate_AA_20_val - ir_rate_GBP_20_val)
+        credit_rate_A_20_val      = CreditCurve_A_val.zeroRate(20 )
+        credit_spread_A_20_val    = (credit_rate_A_20_val - ir_rate_GBP_20_val)
+
+        ir_rate_GBP_20_reval      = irCurve_reval.zeroRate(20)            
+        credit_rate_AA_20_reval   = CreditCurve_AA_reval.zeroRate(20 )
+        credit_spread_AA_20_reval = (credit_rate_AA_20_reval - ir_rate_GBP_20_reval)
+        credit_rate_A_20_reval    = CreditCurve_A_reval.zeroRate(20 )
+        credit_spread_A_20_reval  = (credit_rate_A_20_reval - ir_rate_GBP_20_reval)
+        
+        spread_change_20          = 0.4*(credit_spread_A_20_reval-credit_spread_A_20_val)+0.6*(credit_spread_AA_20_reval-credit_spread_AA_20_val)
            
         reval_rates = []
         
@@ -203,14 +276,34 @@ def load_BMA_Std_Curves(valDate, ccy, revalDate, rollforward = "N", rollforward_
         for idx in range(0, term_count, 1):    
             val_rate    = work_rates[idx]
             each_term   = float(curve_term_years[idx])
-            
-            # reflect rate changes up to 30 year ternor and then stay constant
-            if idx <= 29:
-                swap_change = (irCurve_reval.zeroRate(each_term) - irCurve_val.zeroRate(each_term)) * 100
+
+            swap_change = (irCurve_reval.zeroRate(each_term) - irCurve_val.zeroRate(each_term)) * 100
+            if idx < 19:
+                spread_change = spread_change_10 * 100
+            else:
+                spread_change = spread_change_20 * 100
                 
-            reval_rates.append( val_rate + swap_change )
-        
+            reval_rates.append( val_rate + swap_change + spread_change)
         calc_rates = reval_rates
+
+#        irCurve_val   = createAkitZeroCurve(valDate, "Swap", ccy)
+#        irCurve_reval = createAkitZeroCurve(revalDate, "Swap", ccy)
+#           
+#        reval_rates = []
+#        
+#        term_count = len(curve_terms)
+#        
+#        for idx in range(0, term_count, 1):    
+#            val_rate    = work_rates[idx]
+#            each_term   = float(curve_term_years[idx])
+#            
+#            # reflect rate changes up to 30 year ternor and then stay constant
+#            if idx <= 29:
+#                swap_change = (irCurve_reval.zeroRate(each_term) - irCurve_val.zeroRate(each_term)) * 100
+#                
+#            reval_rates.append( val_rate + swap_change )
+#        
+#        calc_rates = reval_rates
 
     if rollforward == "Y":
         curve_base_date = rollforward_date
@@ -223,7 +316,7 @@ def load_BMA_Std_Curves(valDate, ccy, revalDate, rollforward = "N", rollforward_
         curve_base_date,
         IAL.Util.addTerms(curve_base_date, curve_terms),
         IAL.Util.scale(curveRates_shift, 0.01),
-        "CONTINUOUS", "N", "ACT/365", "FF")
+        "CONTINUOUS", "N", "ACT/365", "FF")  # it is Compounded in Step 2 Excel. However, "compounded" cannot be run in Python, which leads to ALBA OAS & PVBE projection differences.
     
     os.chdir(curr_dir)
     return curveHandle
@@ -276,14 +369,15 @@ def eval_PE_return(eval_date, valDate_base, market_index_type = 'US_Equity'):
     
     if eval_date == eval_date+MonthEnd(0): ## no adjustment for month end Joanna update 10/10/2019
         pe_return = 0
-    elif eval_date >= datetime.datetime(2020,1,1):
+    elif eval_date >= datetime.datetime(2020,1,1) and eval_date <= datetime.datetime(2020,3,31):
         pe_return = 0
     else:
         spx_base    =  get_market_data(valDate_base, market_index_type)
         spx_current =  get_market_data(eval_date, market_index_type)
         spx_return  =  spx_current / spx_base - 1
-        return_year_frac = IAL.Date.yearFrac("ACT/365",  valDate_base, eval_date)
-        pe_return  = PE_Return_Model['alpha'] * return_year_frac+  PE_Return_Model['beta'] * spx_return
+#        return_year_frac = IAL.Date.yearFrac("ACT/365",  valDate_base, eval_date)
+#        pe_return  = PE_Return_Model['alpha'] * return_year_frac+  PE_Return_Model['beta'] * spx_return
+        pe_return  = min(0.7 * spx_return, 0.04)
     
     return pe_return
 
