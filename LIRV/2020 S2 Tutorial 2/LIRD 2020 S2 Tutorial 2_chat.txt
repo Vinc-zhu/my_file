@@ -1,0 +1,98 @@
+00:17:42	George:	sydney
+00:17:46	Jason Jiao:	I'm in Melb
+00:18:14	Jason Jiao:	yeah
+00:20:50	Bear:	Risk management text questions if that's okay
+00:21:30	EJing:	could we get some capital questions for this course as past questions are Aus based
+00:21:47	student:	capital chapter. While I see that we are going to cover it in one of the tuts, I feel that that chapter went over my head 
+00:22:05	student:	especially given that old 2B papers are too australian specific
+00:22:36	EJing:	Are you all right?
+00:23:09	EJing:	normal code get concerns now :)
+00:23:14	EJing:	cold
+00:30:16	EJing:	so should we put the web camera beside, then both I and screen can be seen?
+00:31:59	EJing:	build in one?
+00:32:04	EJing:	I only use one, extended one
+00:32:29	George:	yes
+00:32:38	EJing:	I will reread, thanks
+00:37:04	student:	I have a question about the policy reserves versus claims reserves. Question 1 - Are these reserves (policy and claims) being calculated and tracked in the same valuation system? 2nd question - IP product: Insurer will calculate the policy reserves (using incidence and annuity method) but also the insurer will be calculating the IBNR, RBNA and DLR?  Is it correct?
+00:37:35	student:	my own question )
+00:38:36	Cheng:	so total liability is sum of both?
+00:39:39	student:	The question is - the liability is when we refer to the policy reserves, right? 
+00:39:52	student:	but Claims reserves are not called liabilities, right?
+00:40:18	EJing:	claim reserve, do you mean DLR?
+00:41:08	student:	I can't imagine, how the tracking of the reserves is happening in real life
+00:41:16	daniel:	sounds more like a Process question
+00:41:24	daniel:	in Mod 10
+00:41:58	student:	Pol liab = BEL + PVPM, where DLR is included?
+00:42:41	EJing:	DLR should be part of BEL
+00:42:58	Cheng:	yea DLR and IBNR they are all part of BEL, right?
+00:42:59	student:	so, where DLR is included in calculation of POL LIab?
+00:43:09	EJing:	and there are argument should profit margin included in DLR
+00:43:15	student:	yep
+00:43:23	EJing:	it is normally calculated separately in practice
+00:46:02	student:	expected claim, interest
+00:46:24	student:	number of lives in force - though it depends on assumptions
+00:48:32	Bear:	you mentioned "we will not be retesting modelling / spreadsheet skills in the exam"?
+00:52:05	Cheng:	how much information is enough to describe a model ….? it really depends on the level of experience of the audience
+00:54:12	LL:	it happens at the end of year?
+00:54:32	EJing:	lapse incur after death
+00:55:40	student:	so you are saying that both rates are independent?
+00:56:05	student:	right, I misheard
+00:56:08	EJing:	no, they are not
+00:56:09	student:	thanks
+00:56:21	M Stulman:	They are not since the higher the mortality the h=lower the lapse
+00:57:00	student:	so, if rates are independent, how the calculation of decreements will change?
+00:57:23	student:	yep
+00:57:37	EJing:	only apply to lx
+00:57:42	EJing:	not lx-dx
+01:01:01	George:	why is (al)x+1 applied to expenses and claims and (ap)x is applied to premiums? other spreadsheets are different..
+01:02:10	George:	8th column
+01:02:36	LL:	i think because premium is using the previous year’s premium times (ap)x?
+01:02:43	daniel:	it works out to be the same
+01:02:54	EJing:	yes
+01:02:56	daniel:	(al)1 is 1
+01:03:05	daniel:	times by (ap)x gets (al)2
+01:04:42	student:	yep
+01:04:44	student:	it is correct
+01:05:03	George:	I don't see how
+01:05:09	George:	they are different values
+01:05:20	George:	(ap)x is always above 0.8
+01:05:25	daniel:	(ap)x is applied each year to the previous premium
+01:06:01	daniel:	the previous premium implicitly has (al)x already
+01:06:14	George:	okay, I see what you mean
+01:06:19	EJing:	Annual_premium*VLOOKUP(P5,Decrement,4,FALSE)give the same answer
+01:06:28	George:	thanks
+01:06:42	daniel:	(y) 
+01:09:33	EJing:	total profit is same
+01:09:37	student:	the total profit stays the same
+01:09:45	EJing:	just change the pattern of release
+01:09:47	student:	but the timing changes
+01:11:32	EJing:	non profitable product
+01:11:34	student:	product is priced at zero profit margin
+01:12:48	student:	the profit is released faster at CB2
+01:13:51	student:	there are tax implications, right?
+01:14:14	student:	is there any other implications to the faster release of profit?
+01:15:33	Bear:	Does it mean profit margin is there partially for the cost of capital? and any margin above IRR goes to retained earning
+01:15:42	student:	okeeeyyy… if experience is as assumed, the profit (transfers) will flow to the P&L, right?
+01:17:07	student:	oh yea.. discount and the interest rates are interesting...
+01:17:20	student:	especially for stepped vs level premium product
+01:18:50	RD:	is the interest accrued still on a conservative basis?
+01:20:27	RD:	how come in the following year we don't allow for the previous differences in expenses?
+01:21:49	McGeorge, Helena:	why do we adjust for the interest on actual expenses in conservative basis 2, but we don't adjust for interest on actual claims in conservative basis 1? we seem to assume that the 10% higher claims is realised
+01:21:55	RD:	yep
+01:22:34	Stephanie Martin:	is it because we assume claims occur at end of year, so we don't earn on interest on the claims?
+01:22:54	LL:	is it because the interest on the previous year expense difference has been recognised as profit for that year?
+01:25:13	daniel:	a couple spreadsheets mention their basis has an odd quirk
+01:25:27	daniel:	does anyone know what it is?
+01:25:59	daniel:	okk
+01:26:32	student:	I found these spreadsheet not very usable - meaning that splitting CF, liability and final tables into separate tabs is pretty confusing
+01:27:02	student:	I ended up rebuilding them from scratch and putting everything in the same tab
+01:27:21	student:	so, I have - assumptions, data, calculations tabs 
+01:28:12	student:	haha, lirpd session was pretty good yesterday
+01:28:24	Cheng:	thanks
+01:28:30	Donna:	thank you!
+01:28:31	George:	Thank you, goodnight
+01:28:36	EJing:	thank you all. good night!
+01:28:42	LL:	thank you
+01:28:51	daniel:	thanks
+01:28:51	JC:	Thanks
+01:28:53	Bear:	take care!
