@@ -1,0 +1,27 @@
+00:15:15	RD:	is the practice exam a proper practice exam with like real practice questions?
+00:16:19	Cheng:	I think they will give you a doc to upload, as if uploading an exam answer
+00:19:18	Cheng:	2B past paper has some capital calculation questions, do we have some capital calculation spreadsheet examples that are not Australian specific?
+00:22:08	Laptop:	alright lovely :)
+00:28:12	wl:	50%
+00:34:31	Laptop:	what does negative capital means here? Some of them are negative here
+00:40:08	Daisy:	I think it doesn't mean capital is negative - just that the action of deducting PCA from capital base 
+00:40:22	Laptop:	I see
+00:47:33	Laptop:	do we need to know how to use var-cov matrix or copula to calculate risk agg benefit? they were mentioned in the textbook, but no example....
+00:48:02	Laptop:	ok !
+01:02:50	student:	business mix is different for each poroduct
+01:02:51	Daisy:	the underlying insured cohorts are different 
+01:03:07	wl:	healthier lives purchase annuities?
+01:03:32	Laptop:	different self selections
+01:04:06	Laptop:	healthier lives purchase annuitie
+01:06:48	Laptop:	Thanks, you too
+01:15:43	Daisy:	the UK exams are closed book - right? If so it makes sense they reward more marks on bookwork 
+01:16:22	Daisy:	ok thx! 
+01:32:10	RD:	I know this has been asked a couple of times, but since there are very little past papers on capital, can we get a few more practice qs for capital?
+01:33:14	RD:	ok thank u
+01:33:57	RD:	also i think there were a few questions from last week that you said u would follow up on
+01:34:51	Laptop:	a few of us mentioned there is no spreadsheet for LIRV past paper in 2019? I forgot which question it was
+01:35:04	Laptop:	spreadsheet solution*
+01:35:06	RD:	thank you - stay safe!
+01:35:16	Laptop:	yea~
+01:35:29	Laptop:	I think so
+01:36:02	Laptop:	ok
